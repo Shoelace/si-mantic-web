@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jQuery Demo</title>
+  <link rel="stylesheet" href="./css/style.css">
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/2.2.2/moment-duration-format.min.js"></script>
+<script src="./js/scripts.js"></script>
+</head>
+
+<body>
+<p id="demo"></p>
+
+
+time demo<br>
+<ul>
+<li><time datetime="1914">  1914<!-- means the year 1914 --></time><br>
+<li><time datetime="1914-12"> dec 1914 <!-- means December 1914 --></time><br>
+<li><time datetime="1914-12-20"> 20 dec 1914 <!-- means 20 December 1914 --></time><br>
+<li><time datetime="12-20"> dec 20 <!-- means 20 December any year --></time><br>
+<li><time datetime="1914-W15"> week 15 <!-- means week 15 of year 1914 --></time><br>
+</ul>
+Date and Times:<br>
+<ul>
+<li><time datetime="1914-12-20T08:00"> 8am <!-- means 20 December 1914 at 8am --></time><br>
+<li><time datetime="1914-12-20 08:00Z">  another 8am <!-- also means 20 December 1914 at 8am --></time><br>
+<li><time datetime="1914-12-20 08:30:45"> secobnds <!-- with minutes and seconds --></time><br>
+<li><time datetime="1914-12-20 08:30:45.687"> subseconds <!-- with minutes, seconds, and milliseconds --></time><br>
+</ul>
+<br>
+Times:<br>
+<li><time datetime="08:00"> jan 8am <!-- means 8am --></time><br>
+<li><time datetime="08:00-03:00">8am rio  <!-- means 8am in Rio de Janeiro (UTC-3 hours)  --></time><br>
+<li><time datetime="08:00+03:00">8am madagascar  <!-- means 8am in Madagascar (UTC+3 hours)  --></time><br>
+<br>
+Durations:<br>
+<time datetime="P2D">  crap 2 days <!-- means a duration of 2 days --></time><br>
+<time datetime="PT15H10M"> crap 15  hours and change<!-- means a duration of 15 hours and 10 minutes --></time><br>
+<br>
+
+
+
+</body>
+
+</html>
