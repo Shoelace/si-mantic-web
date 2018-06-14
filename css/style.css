@@ -1,10 +1,111 @@
-.overlay {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
-  background: gray;
+* {
+  border:0;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */	
+	
+	/* animate */
+	opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+	/*animate */
+	opacity: 1; 
+}
+
+/* arrow */
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+
+[datetime]{
+  position:relative;
+  display:inline-block;
+
+}
+/*arrow */
+[datetime]::before {
+    content: "";
+    position: absolute;
+    left:50%;
+    border-width: 4px 6px 0 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.7) transparent transparent     transparent;
+    z-index: 99;
+    
+    opacity:0;
+ top: 100%;
+  margin-top: 2px;
+  transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+}
+
+/*tooltip*/
+[datetime]::after { 
+    content: attr(datetime);
+    position: absolute;
+	float: right;
+
+    background-color: black;
+    left:50%;
+	
+    text-align: center;
+    color: #fff;
+    padding:4px 2px;
+    font-size: 12px;
+    min-width: 100px;
+    border-radius: 5px;
+    pointer-events: none;
+    padding: 2px 2px;
+    z-index:99;
+    opacity:0;
+  top: 100%;
+  margin-top: 2px;
+  transform: translateX(-50%) translateY(0%);	
+
+}
+
+
+[datetime]:hover::after,[datetime]:hover::before {
+  transition: all 1.5s;
+  transition-delay: 0.5s;
+   opacity:1
+
+}
+
+
+a:after {
+    content: " (" attr(href) ")";
 }
